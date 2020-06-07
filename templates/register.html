@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if registered %}
+    <h1>Thank for registering</h1>
+    {% else %}
+    <center>
+    <h1>Registration Form</h1>
+    
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{userform.as_p}}
+          {{profileform.as_p}}
+          <input type="submit" value="Register" class="btn btn-primary">
+        </form>
+    </center>
+    {% endif %}
+
+    
+</body>
+</html>
